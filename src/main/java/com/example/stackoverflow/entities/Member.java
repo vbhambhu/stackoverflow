@@ -11,22 +11,22 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long number;
+    private Long memberId;
 
     @NonNull
     @Column(nullable=false)
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="department_number")
+    @JoinColumn(name="department_id")
     private Department department;
 
-    public Long getNumber() {
-        return number;
+    public Long getMemberId() {
+        return memberId;
     }
 
-    public void setNumber(Long number) {
-        this.number = number;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
     public String getName() {

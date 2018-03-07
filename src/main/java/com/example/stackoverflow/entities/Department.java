@@ -14,7 +14,7 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long department_number;
+    private Long departmentId;
 
     @NonNull
     @Column(nullable=false, unique=true)
@@ -22,15 +22,15 @@ public class Department {
 
 
     @OneToMany(mappedBy="department")
-   // @JsonBackReference
+    @JsonBackReference
     private List<Member> members;
 
-    public Long getDepartment_number() {
-        return department_number;
+    public Long getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment_number(Long department_number) {
-        this.department_number = department_number;
+    public void setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getName() {
